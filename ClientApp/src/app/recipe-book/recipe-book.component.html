@@ -1,7 +1,8 @@
-<h1>Recipe Book Counter</h1>
+<h1>Recipe Book List</h1>
 
-<p>This is a simple example of an Angular component.</p>
 
-<p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
+  <tr><th>Name</th><th>Contents</th></tr>
+  <tbody>
+    <tr aria-live="polite" *ngFor="let recipe of recipes"><td>{{ recipe.name }}</td><td>{{recipe.contents}}</td></tr>
+  </tbody>
 
-<button class="btn btn-primary" (click)="incrementCounter()">Increment</button>

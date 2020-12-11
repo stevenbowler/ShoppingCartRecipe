@@ -1,7 +1,34 @@
-<h1>Shopping Cart item counter</h1>
+<h1>Shopping Cart Ingredients</h1>
 
-<p>This is a simple example of an Angular component.</p>
+<h3>Add an Ingredient</h3>
+<div class="input-group input-group-sm">
+  <label>Name:</label>
+  <input type="text" class="form-control" [(ngModel)]="ingredient" />
+  <label>Contents:</label>
+  <input type="text" class="form-control" [(ngModel)]="contents" />
+  <button class="btn btn-success" (click)="onAddIngredient()">Add</button>
+</div>
 
-<p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
 
-<button class="btn btn-primary" (click)="incrementCounter()">Increment</button>
+
+<div>
+  <h3>List of Ingredients</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Contents</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of ingredients; let i = index">
+        <td>{{ item.name }}</td>
+        <td>{{ item.contents }}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="onDeleteIngredient(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
