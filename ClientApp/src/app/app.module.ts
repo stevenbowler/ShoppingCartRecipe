@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { ShoppingCartListComponent } from './shopping-cart/shopping-cart-list/shopping-cart-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     CounterComponent,
     FetchDataComponent,
     RecipeBookComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ShoppingCartListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { Ingredient } from './ingredient.model';
 
 @Component({
@@ -6,6 +6,7 @@ import { Ingredient } from './ingredient.model';
   templateUrl: './shopping-cart.component.html'
 })
 export class ShoppingCartComponent {
+  //@Output() public item: number;
   public ingredient: string = "";
   public contents: string = "";
   public ingredients: Ingredient[] = [
