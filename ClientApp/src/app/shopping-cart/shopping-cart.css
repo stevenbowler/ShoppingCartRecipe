@@ -1,0 +1,25 @@
+/*app-shopping-cart-list :nth-child(even) {
+  background-color: darkgray;
+}
+
+app-shopping-cart-list :nth-child(odd) {
+  background-color: lightgray;
+}
+
+app-shopping-cart-list :hover {
+  background-color: lightgreen;
+}
+
+*/
+
+.panel-default > .panel-heading:nth-child(odd) {
+  background: #00f5f5;
+}
+
+.even {
+  background-color: #ccc;
+}
+
+.odd {
+  background-color: #333;
+}

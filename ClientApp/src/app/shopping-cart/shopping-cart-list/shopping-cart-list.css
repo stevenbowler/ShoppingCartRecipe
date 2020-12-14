@@ -1,0 +1,21 @@
+/*.row:nth-child(even) {
+  background-color: darkgray;
+}
+
+.row:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.row:hover {
+  background-color: lightgreen;
+}*/
+/*
+.row > .col-sm-3:nth-child(odd) {
+  background: #00f5f5;
+}
+
+
+.col-sm-3:nth-of-type(odd) .row {
+  background: #00f5f5;
+}*/
+

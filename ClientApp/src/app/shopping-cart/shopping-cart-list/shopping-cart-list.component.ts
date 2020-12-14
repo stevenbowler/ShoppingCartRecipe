@@ -3,7 +3,8 @@ import { Ingredient } from '../ingredient.model';
 
 @Component({
   selector: 'app-shopping-cart-list',
-  templateUrl: './shopping-cart-list.component.html'
+  templateUrl: './shopping-cart-list.component.html',
+  styleUrls: ['./shopping-cart-list.css']
 })
 export class ShoppingCartListComponent {
   @Input() public name: string = "";
