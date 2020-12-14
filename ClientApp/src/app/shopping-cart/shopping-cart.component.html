@@ -13,12 +13,14 @@
 
 <div>
   <h3>List of Ingredients</h3>
+  <hr />
   <div class="container">
     <div class="row">
       <div class="col-sm-3">Name</div>
       <div class="col-sm-6">Contents</div>
       <div class="col-sm-3">Action</div>
     </div>
-    <app-shopping-cart-list *ngFor="let ingredient of ingredients; let i=index" (deleteIngredient)="onDeleteIngredient($event)" [name]="ingredient.name" [contents]="ingredient.contents" [i]="i"></app-shopping-cart-list>
+    <hr />
+    <app-shopping-cart-list ng-class-odd="'odd'" ng-class-even="'even'" *ngFor="let ingredient of ingredients; let i=index" (deleteIngredient)="onDeleteIngredient($event)" [name]="ingredient.name" [contents]="ingredient.contents" [i]="i"></app-shopping-cart-list>
   </div>
 </div>
