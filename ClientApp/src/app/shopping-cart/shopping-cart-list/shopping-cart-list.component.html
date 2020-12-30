@@ -1,14 +1,10 @@
-
-<!--<tr>
-  <td>{{ name }}</td>
-  <td>{{ contents }}</td>
-  <td>
-    <button type="button" class="btn btn-danger" (click)="onDeleteIngredient(i)">Delete</button>
-  </td>
-</tr>-->
-
-<div class="row">
-    <div class="col-sm-3">{{name}}</div>
-    <div class="col-sm-6">{{contents}}</div>
-    <div class="col-sm-3"><button type="button" class="btn btn-danger" (click)="onDeleteIngredient(i)">Delete</button></div>
+<div class="row" style="margin:2px;">
+  <div class="col-sm-3">{{name}}</div>
+  <div class="col-sm-7">{{contents}}</div>
+  <div class="col-sm-1">
+    <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteIngredient(i)">Delete</button>
+  </div>
+  <div class="col-sm-1">
+    <button type="button" class="btn btn-primary btn-sm" (click)="onEditIngredient(i)">Edit</button>
+  </div>
 </div>

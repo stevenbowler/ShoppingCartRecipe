@@ -1,12 +1,17 @@
 <h1>Shopping Cart</h1>
 
-<h3>Add an Ingredient</h3>
+<!--<div *ngIf="condition; else elseBlock">Content to render when condition is true.</div>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>-->
+
+<h3 *ngIf="!editMode; else editBanner">Add an Ingredient</h3>
+<ng-template #editBanner><h3 class="edit-banner">Edit this Ingredient</h3></ng-template>
 <div class="input-group input-group-sm">
   <label>Name:</label>
   <input type="text" class="form-control" [(ngModel)]="ingredient" />
   <label>Contents:</label>
   <input type="text" class="form-control" [(ngModel)]="contents" />
-  <button class="btn btn-success" (click)="onAddIngredient()">Add</button>
+  <button class="btn btn-success btn-sm" (click)="onAddIngredient()" *ngIf="!editMode; else editButton">Add</button>
+  <ng-template #editButton><button class="btn btn-primary btn-sm" (click)="onUpdateIngredient()">Update</button></ng-template>
 </div>
 
 
@@ -17,10 +22,19 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-3">Name</div>
-      <div class="col-sm-6">Contents</div>
-      <div class="col-sm-3">Action</div>
+      <div class="col-sm-7">Contents</div>
+      <div class="col-sm-2">Actions</div>
     </div>
     <hr />
-    <app-shopping-cart-list ng-class-odd="'odd'" ng-class-even="'even'" *ngFor="let ingredient of ingredients; let i=index" (deleteIngredient)="onDeleteIngredient($event)" [name]="ingredient.name" [contents]="ingredient.contents" [i]="i"></app-shopping-cart-list>
+    <app-shopping-cart-list ng-class-odd="'odd'"
+                            ng-class-even="'even'"
+                            *ngFor="let ingredient of (ingredients | async).ingredients; let i=index"
+                            (editIngredient)="onEditIngredient($event)"
+                            (deleteIngredient)="onDeleteIngredient($event)"
+                            [name]="ingredient.name"
+                            [contents]="ingredient.contents"
+                            [i]="i">
+
+    </app-shopping-cart-list>
   </div>
 </div>
