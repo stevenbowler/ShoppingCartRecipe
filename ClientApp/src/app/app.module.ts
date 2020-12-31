@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -15,6 +16,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShoppingCartListComponent } from './shopping-cart/shopping-cart-list/shopping-cart-list.component';
 import { IngredientService } from './shopping-cart/ingredient.service';
 import { shoppingCartReducer } from './shopping-cart/store/shopping-cart.reducer';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { shoppingCartReducer } from './shopping-cart/store/shopping-cart.reducer
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
-    StoreModule.forRoot({shoppingCart: shoppingCartReducer}),
+    StoreModule.forRoot({ shoppingCart: shoppingCartReducer }),
+    StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
