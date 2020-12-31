@@ -12,6 +12,11 @@ app-shopping-cart-list :hover {
 
 */
 
+
+.edit-banner {
+  color: red;
+}
+/*
 .panel-default > .panel-heading:nth-child(odd) {
   background: #00f5f5;
 }
@@ -23,3 +28,4 @@ app-shopping-cart-list :hover {
 .odd {
   background-color: #333;
 }
+*/
