@@ -38,14 +38,6 @@ export function shoppingCartReducer(
         ...state,
         ingredients: state.ingredients.filter((ig, igIndex) => { return igIndex !== action.payload })
       }
-    case ShoppingCartActions.UPDATE_INGREDIENT:
-      console.log('ngrx UPDATE_ingredient, action.payload: ', action.payload);
-      let scIngredients = [...state.ingredients];
-      scIngredients[action.payload.itemIndex] = action.payload.ingredient;
-      return {
-        ...state,
-        ingredients: scIngredients
-      }
     case ShoppingCartActions.EDIT_INGREDIENT:
       console.log('ngrx EDIT_ingredient, action.payload: ', action.payload);
       let editIngredients = [...state.ingredients];
@@ -54,6 +46,16 @@ export function shoppingCartReducer(
         ...state,
         editIngredientIndex: action.payload,
         editIngredient: editIngredient
+      }
+    case ShoppingCartActions.UPDATE_INGREDIENT:
+      console.log('ngrx UPDATE_ingredient, action.payload: ', action.payload);
+      let scIngredients = [...state.ingredients];
+      scIngredients[action.payload.itemIndex] = action.payload.ingredient;
+      return {
+        ...state,
+        ingredients: scIngredients,
+        editIngredientIndex: -1,
+        editIngredient: null
       }
     default:
       return state;
