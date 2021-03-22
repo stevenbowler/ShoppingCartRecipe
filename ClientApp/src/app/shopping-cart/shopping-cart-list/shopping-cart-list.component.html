@@ -2,9 +2,9 @@
   <div class="col-sm-3">{{name}}</div>
   <div class="col-sm-7">{{contents}}</div>
   <div class="col-sm-1">
-    <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteIngredient(i)">Delete</button>
+    <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteIngredient(i)" *ngIf="!editMode">Delete</button>
   </div>
   <div class="col-sm-1">
-    <button type="button" class="btn btn-primary btn-sm" (click)="onEditIngredient(i)">Edit</button>
+    <button type="button" class="btn btn-primary btn-sm" (click)="onEditIngredient(i)" *ngIf="!editMode">Edit</button>
   </div>
 </div>

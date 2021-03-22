@@ -12,10 +12,31 @@ app-shopping-cart-list :hover {
 
 */
 
+.edit-heading {
+    color: grey;
+}
+
 
 .edit-banner {
   color: red;
 }
+
+.main-rule {
+  border-top: 1px solid red;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+
+
+
 /*
 .panel-default > .panel-heading:nth-child(odd) {
   background: #00f5f5;

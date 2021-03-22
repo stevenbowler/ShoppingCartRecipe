@@ -2,7 +2,7 @@
 
 Manage a list of Recipes and the needed ingredients using Angular10 with ngrx, SQL, and full Auth.
 
-
+This is a project by Steven Bowler
 
 ###  Program Documentation
 

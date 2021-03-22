@@ -20,7 +20,8 @@
 }
 */
 .row:hover {
-  background-color: lightgrey;
+  background-color: grey;
+  color: black;
 }
 
 .edit-banner {

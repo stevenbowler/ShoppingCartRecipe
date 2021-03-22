@@ -1,4 +1,6 @@
-<h1>Shopping Cart</h1>
+<h1 *ngIf="!editMode; else editHeading">Shopping Cart</h1>
+<ng-template #editHeading><h3 class="edit-heading">Shopping Cart Edit Mode</h3></ng-template>
+<hr class="main-rule" />
 
 <!--<div *ngIf="condition; else elseBlock">Content to render when condition is true.</div>
 <ng-template #elseBlock>Content to render when condition is false.</ng-template>-->
@@ -7,9 +9,9 @@
 <ng-template #editBanner><h3 class="edit-banner">Edit this Ingredient</h3></ng-template>
 <div class="input-group input-group-sm">
   <label>Name:</label>
-  <input type="text" class="form-control" [(ngModel)]="ingredient" />
+  <input type="text" class="form-control bg-dark text-light" [(ngModel)]="ingredient" />
   <label>Contents:</label>
-  <input type="text" class="form-control" [(ngModel)]="contents" />
+  <input type="text" class="form-control bg-dark text-light" [(ngModel)]="contents" />
   <button class="btn btn-success btn-sm" (click)="onAddIngredient()" *ngIf="!editMode; else editButton">Add</button>
   <ng-template #editButton><button class="btn btn-primary btn-sm" (click)="onUpdateIngredient()">Update</button></ng-template>
 </div>
