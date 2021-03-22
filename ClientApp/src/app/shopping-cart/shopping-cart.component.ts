@@ -1,7 +1,6 @@
 import { Component, Output, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ingredient } from './ingredient.model';
-import { IngredientService } from './ingredient.service';
 import { Store } from '@ngrx/store';
 import * as shoppingCartActions from './store/shopping-cart.actions';
 import * as fromShoppingList from './store/shopping-cart.reducer';
@@ -12,7 +11,6 @@ import * as fromShoppingList from './store/shopping-cart.reducer';
   styleUrls: ['./shopping-cart.css']
 })
 export class ShoppingCartComponent {
-  //@Output() public item: number;
 
   public editMode: boolean = false;
   public itemIndex: number;
@@ -24,17 +22,13 @@ export class ShoppingCartComponent {
     editIngredient: Ingredient
   }>;
 
-  constructor(private ingredientService: IngredientService,
-    private store: Store<fromShoppingList.AppState>) { }
-  //private store: Store<{ shoppingCart: { ingredients: Ingredient[] } }>) { }
+  constructor(private store: Store<fromShoppingList.AppState>) { }
 
   ngOnInit() {
     this.ingredients = this.store.select('shoppingCart');
     this.ingredients.subscribe(stateObj => {
-      //if (stateObj.editIngredientIndex !== -1) 
       console.log("stateObj: ", stateObj, stateObj.ingredients[this.itemIndex]);
     });
-    console.log('component.ts this.ingredients', this.ingredients);
   }
 
   public onAddIngredient() {
@@ -45,14 +39,12 @@ export class ShoppingCartComponent {
   }
 
   public onDeleteIngredient(itemIndex) {
-    console.log("component delete ingredient", itemIndex);
     this.store.dispatch(new shoppingCartActions.DeleteIngredient(itemIndex));
   }
 
   public onEditIngredient(itemIndex) {
     this.editMode = true;
     this.store.dispatch(new shoppingCartActions.EditIngredient(itemIndex));
-    //this.itemIndex = itemIndex;
     this.ingredients.subscribe(stateObj => {
       if (itemIndex <= stateObj.editIngredientIndex) {      // delete last row and can't access stateObj...name etc
         this.ingredient = stateObj.ingredients[itemIndex].name;

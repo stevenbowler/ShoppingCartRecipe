@@ -1,8 +1,42 @@
-<h1>Recipe Book List</h1>
+<h1>Recipes</h1>
+
+<hr />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">Name</div>
+    <div class="col-sm-3">Ingredients</div>
+    <div class="col-sm-2">Instructions</div>
+    <div class="col-sm-1">Prep Time</div>
+    <div class="col-sm-1">Cook Time</div>
+    <div class="col-sm-3">Cook Method</div>
+  </div>
+  <hr />
 
 
-  <tr><th>Name</th><th>Contents</th></tr>
-  <tbody>
-    <tr aria-live="polite" *ngFor="let recipe of recipes"><td>{{ recipe.name }}</td><td>{{recipe.contents}}</td></tr>
-  </tbody>
+  <div class="row" *ngFor="let recipe of recipes">
+    <div class="col-sm-2">{{ recipe.name }}</div>
+    <div class="col-sm-3">
+      <select>
+        <option selected>See Ingredients</option>
+        <option>All</option>
+        <option *ngFor="let ingredient of recipe.ingredients; let i=index" id="i">
+          {{ingredient.name}} {{ingredient.contents}} {{ingredient.unitDescription}}
+        </option>
+      </select>
+      <!--<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    See Ingredients
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#" *ngFor="let ingredient of recipe.ingredients; let i=index" id="i">{{ingredient.name}} {{ingredient.contents}} {{ingredient.unitDescription}}</a>
+    </div>
+  </div>-->
+    </div>
+    <div class="col-sm-2">{{recipe.instructions}}</div>
+    <div class="col-sm-1">{{recipe.prepTime}}</div>
+    <div class="col-sm-1">{{recipe.cookTime}}</div>
+    <div class="col-sm-2">{{recipe.coockMethod}}</div>
+  </div>
+</div>
 

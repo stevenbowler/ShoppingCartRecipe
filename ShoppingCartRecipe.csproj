@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\app\NewFolder\" />
+    <Folder Include="ClientApp\src\app\recipe-book\NewFolder\" />
     <Folder Include="ClientApp\src\app\shopping-cart\NewFolder\" />
   </ItemGroup>
 

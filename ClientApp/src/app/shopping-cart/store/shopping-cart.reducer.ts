@@ -13,8 +13,6 @@ export interface AppState {
 }
 
 
-// LEFT OFF HERE course 354 ngrx
-
 const initialState: State = {
   ingredients: [] = [
     new Ingredient("orange", "5"),
@@ -39,7 +37,7 @@ export function shoppingCartReducer(
         ingredients: state.ingredients.filter((ig, igIndex) => { return igIndex !== action.payload })
       }
     case ShoppingCartActions.EDIT_INGREDIENT:
-      console.log('ngrx EDIT_ingredient, action.payload: ', action.payload);
+      //console.log('ngrx EDIT_ingredient, action.payload: ', action.payload);
       let editIngredients = [...state.ingredients];
       let editIngredient = editIngredients[action.payload]
       return {
@@ -48,7 +46,7 @@ export function shoppingCartReducer(
         editIngredient: editIngredient
       }
     case ShoppingCartActions.UPDATE_INGREDIENT:
-      console.log('ngrx UPDATE_ingredient, action.payload: ', action.payload);
+      //console.log('ngrx UPDATE_ingredient, action.payload: ', action.payload);
       let scIngredients = [...state.ingredients];
       scIngredients[action.payload.itemIndex] = action.payload.ingredient;
       return {
