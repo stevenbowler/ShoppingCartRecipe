@@ -1,6 +1,7 @@
 ## Shopping Cart Recipe
 
-Manage a list of Recipes and the needed ingredients using Angular10 with ngrx, SQL, and full Auth.
+Manage a list of Recipes and the needed ingredients using Angular10 with ngrx, SQL, and full Auth. 
+Mar. 27, 2021 was failing Azure pipeline due to Nuget <5.7 updated to 5.8.1
 
 This is a project by Steven Bowler
 
