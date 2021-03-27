@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
+import { RecipeListComponent } from './recipe-book/recipe-list/recipe-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShoppingCartListComponent } from './shopping-cart/shopping-cart-list/shopping-cart-list.component';
 import { IngredientService } from './shopping-cart/ingredient.service';
@@ -26,6 +27,7 @@ import { environment } from '../environments/environment';
     CounterComponent,
     FetchDataComponent,
     RecipeBookComponent,
+    RecipeListComponent,
     ShoppingCartComponent,
     ShoppingCartListComponent
   ],
