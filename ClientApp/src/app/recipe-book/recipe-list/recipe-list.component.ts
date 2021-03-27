@@ -6,7 +6,7 @@ import { Ingredient } from '../../shopping-cart/ingredient.model';
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html'
 })
-export class RecipeBookComponent {
+export class RecipeListComponent {
   public recipes: Recipe[] = [
     new Recipe("Apple Pie", [new Ingredient( "apple", "5", "tbsp"), new Ingredient("flour", "1", "cup")]),
     new Recipe("Cheese Cake", [new Ingredient("cheese", "5", "oz."), new Ingredient("flour", "1.5", "cup")])];
